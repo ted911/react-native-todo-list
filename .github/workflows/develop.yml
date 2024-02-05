@@ -6,74 +6,70 @@ jobs:
     name: ios-build
     runs-on: ubuntu-latest
     steps:
-      # - name: Cancel previous runs
-      #   uses: styfle/cancel-workflow-action
       - name: Checkout repo from dev branch
         uses: actions/checkout@v4
-      # - name: Install npm dependency
-      #   run: yarn install
-      # - name: Cache cocoapods
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: /ios/Pods
-      #     key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-pods-
-      # - name: Install pod dependency
-      #   run: |
-      #     cd ios
-      #     bundle exec pod install
-      # - name: Build iOS JS bundle
-      #   run: |
-      #     yarn run package-ios
-      # - name: Install bundler
-      #   run: |
-      #     cd ios
-      #     gem install bundler
-      # - name: Install gem plugins
-      #   run: |
-      #     cd ios
-      #     bundle exec fastlane build_testflight
+      - name: Install npm dependency
+        run: yarn install
+      - name: Cache cocoapods
+        uses: actions/cache@v4
+        with:
+          path: /ios/Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+      - name: Install pod dependency
+        run: |
+          cd ios
+          bundle exec pod install
+      - name: Build iOS JS bundle
+        run: |
+          yarn run package-ios
+      - name: Install bundler
+        run: |
+          cd ios
+          gem install bundler
+      - name: Install gem plugins
+        run: |
+          cd ios
+          bundle exec fastlane build_testflight
   android-build:
     name: android-build
     runs-on: ubuntu-latest
     steps:
-      # - name: Cancel previous runs
-      #   uses: styfle/cancel-workflow-action
       - name: Checkout repo from dev branch
         uses: actions/checkout@v4
-      # - name: Install npm dependency
-      #   run: yarn install
-      # - name: Setup Android SDK
-      #   uses: android-actions/setup-android@v3
-      # - uses: actions/cache@v4
-      #   with:
-      #     path: |
-      #       ~/.gradle/caches
-      #       ~/.gradle/wrapper
-      #     key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-gradle-
-      # - name: Setup Gradle
-      #   uses: gradle/gradle-build-action@v3
-      # - name: Execute Gradle build
-      #   run: |
-      #     cd android
-      #     ./gradlew build
-      # - name: Build Android JS Bundle
-      #   run: |
-      #     yarn run package-android
-      # - name: Delete Android build duplicate assets resource
-      #   run: yarn run delete-pics
-      # - name: Install bundler
-      #   run: |
-      #     cd android
-      #     gem install bundler
-      # - name: Install gem plugins
-      #   run: |
-      #     cd android
-      #     bundle install
-      # - name: Run fastlane
-      #   run: |
-      #     cd android
-      #     bundle exec fastlane build_qa
+      - name: Install npm dependency
+        run: yarn install
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v3
+      - name: Execute Gradle build
+        run: |
+          cd android
+          ./gradlew build
+      - name: Build Android JS Bundle
+        run: |
+          yarn run package-android
+      - name: Delete Android build duplicate assets resource
+        run: yarn run delete-pics
+      - name: Install bundler
+        run: |
+          cd android
+          gem install bundler
+      - name: Install gem plugins
+        run: |
+          cd android
+          bundle install
+      - name: Run fastlane
+        run: |
+          cd android
+          bundle exec fastlane build_qa
