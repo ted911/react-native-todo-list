@@ -12,8 +12,6 @@ jobs:
         uses: styfle/cancel-workflow-action
       - name: Checkout repo from dev branch
         uses: actions/checkout@v4
-        with:
-          ref: dev
       - name: Install npm dependency
         run: yarn install
       - name: Cache cocoapods
