@@ -6,10 +6,10 @@ jobs:
     name: ios-build
     runs-on: ubuntu-latest
     steps:
-      - name: Cancel previous runs
-        uses: styfle/cancel-workflow-action
-      # - name: Checkout repo from dev branch
-      #   uses: actions/checkout@v4
+      # - name: Cancel previous runs
+      #   uses: styfle/cancel-workflow-action
+      - name: Checkout repo from dev branch
+        uses: actions/checkout@v4
       # - name: Install npm dependency
       #   run: yarn install
       # - name: Cache cocoapods
@@ -38,10 +38,10 @@ jobs:
     name: android-build
     runs-on: ubuntu-latest
     steps:
-      - name: Cancel previous runs
-        uses: styfle/cancel-workflow-action
-      # - name: Checkout repo from dev branch
-      #   uses: actions/checkout@v4
+      # - name: Cancel previous runs
+      #   uses: styfle/cancel-workflow-action
+      - name: Checkout repo from dev branch
+        uses: actions/checkout@v4
       # - name: Install npm dependency
       #   run: yarn install
       # - name: Setup Android SDK
