@@ -10,10 +10,8 @@ jobs:
         run: uname -a
       - name: Cancel previous runs
         uses: styfle/cancel-workflow-action
-      - name: Checkout repo from dev branch
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ github.repository }}
+      # - name: Checkout repo from dev branch
+      #   uses: actions/checkout@v4
       # - name: Install npm dependency
       #   run: yarn install
       # - name: Cache cocoapods
@@ -46,10 +44,8 @@ jobs:
         run: uname -a
       - name: Cancel previous runs
         uses: styfle/cancel-workflow-action
-      - name: Checkout repo from dev branch
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ github.repository }}
+      # - name: Checkout repo from dev branch
+      #   uses: actions/checkout@v4
       # - name: Install npm dependency
       #   run: yarn install
       # - name: Setup Android SDK
