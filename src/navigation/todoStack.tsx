@@ -4,7 +4,7 @@ import TodoListScreen from 'screens/TodoListScreen';
 import TodoListDetailScreen from 'screens/TodoListDetailScreen';
 import {RootStackParamList} from 'navigation/_types.ts';
 
-function BaseNavigator() {
+function TodoStack() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
   return (
     <Stack.Navigator initialRouteName="TodoList">
@@ -14,4 +14,4 @@ function BaseNavigator() {
   );
 }
 
-export default BaseNavigator;
+export default TodoStack;
