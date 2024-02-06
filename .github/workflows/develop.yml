@@ -10,13 +10,13 @@ jobs:
         uses: actions/checkout@v4
       - name: Install npm dependency
         run: yarn install
-      # - name: Cache cocoapods
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: /ios/Pods
-      #     key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-pods-
+      - name: Cache cocoapods
+        uses: actions/cache@v4
+        with:
+          path: /ios/Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
       # - name: Install pod dependency
       #   run: |
       #     cd ios
@@ -61,20 +61,20 @@ jobs:
         run: |
           cd android
           ./gradlew build
-      - name: Build Android JS Bundle
-        run: |
-          yarn run package-android
-      - name: Delete Android build duplicate assets resource
-        run: yarn run delete-pics
-      - name: Install bundler
-        run: |
-          cd android
-          gem install bundler
-      - name: Install gem plugins
-        run: |
-          cd android
-          bundle install
-      - name: Run fastlane
-        run: |
-          cd android
-          bundle exec fastlane build_qa
+      # - name: Build Android JS Bundle
+      #   run: |
+      #     yarn run package-android
+      # - name: Delete Android build duplicate assets resource
+      #   run: yarn run delete-pics
+      # - name: Install bundler
+      #   run: |
+      #     cd android
+      #     gem install bundler
+      # - name: Install gem plugins
+      #   run: |
+      #     cd android
+      #     bundle install
+      # - name: Run fastlane
+      #   run: |
+      #     cd android
+      #     bundle exec fastlane build_qa
