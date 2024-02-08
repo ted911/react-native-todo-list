@@ -6,13 +6,13 @@
  */
 
 import {NavigationContainer} from '@react-navigation/native';
-import TopTabNavigator from 'navigation/topTabNavigator';
+import BaseNavigator from 'navigation/BaseNavigator';
 import React from 'react';
 
 function App(): React.JSX.Element {
   return (
     <NavigationContainer>
-      <TopTabNavigator />
+      <BaseNavigator />
     </NavigationContainer>
   );
 }

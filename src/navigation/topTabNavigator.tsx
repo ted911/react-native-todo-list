@@ -8,9 +8,9 @@ const Tab = createMaterialTopTabNavigator<TopTabParamList>();
 
 const TopTabNavigator = () => {
   return (
-    <Tab.Navigator initialRouteName="TodoList">
-      <Tab.Screen name="할일 목록" component={TodoStack} />
-      <Tab.Screen name="완료된 목록" component={DoneListScreen} />
+    <Tab.Navigator style={{paddingTop: 20}} initialRouteName="TodoList">
+      <Tab.Screen name="todoList" component={TodoStack} />
+      <Tab.Screen name="DoneList" component={DoneListScreen} />
       <Tab.Screen name="webView" component={WebViewScreen} />
     </Tab.Navigator>
   );

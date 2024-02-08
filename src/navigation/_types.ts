@@ -1,11 +1,26 @@
-export interface RootStackParamList {
-  [key: string]: undefined | {id: number; title: string; done: boolean};
-  TodoList: undefined;
-  TodoListDetail: {id: number; title: string; done: boolean};
-}
-export interface TopTabParamList {
+// interface ScreenParams {
+//   title: string;
+// }
+interface StackParamList {
   [key: string]: undefined;
-  '할일 목록': undefined;
-  '완료된 목록': undefined;
-  webView: undefined;
+  // [key: string]: Partial<ScreenParams>;
+}
+export interface RootStackParamList extends StackParamList {
+  Event: undefined;
+  Feed: undefined;
+  Home: undefined;
+  Benefit: undefined;
+  Mypage: undefined;
+}
+export interface TopTabParamList extends StackParamList {
+  TodoList: undefined;
+  DoneList: undefined;
+  WebView: undefined;
+}
+export interface BottomTabParamList extends StackParamList {
+  Event: undefined;
+  Feed: undefined;
+  Home: undefined;
+  Benefit: undefined;
+  MyPage: undefined;
 }
