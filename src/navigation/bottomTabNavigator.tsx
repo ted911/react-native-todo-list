@@ -1,10 +1,10 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import HomeScreen from 'screens/HomeScreen';
 import EventScreen from 'screens/tabScreens/EventScreen';
-import FeedScreen from 'screens/tabScreens/FeedScreen';
 import {BottomTabParamList} from './_types';
 import BenefitScreen from 'screens/tabScreens/BenefitScreen';
 import MyPageScreen from 'screens/tabScreens/MyPageScreen';
+import WebViewScreen from 'screens/WebViewScreen';
+import TopTabNavigator from './topTabNavigator';
 
 /*
  * tab이 있는 페이지: home, event, feed, benefit, mypage
@@ -23,12 +23,12 @@ const BottomTabNavigator = () => {
       <Tab.Screen
         name="Feed"
         options={{title: '피드'}}
-        component={FeedScreen}
+        component={TopTabNavigator}
       />
       <Tab.Screen
         name="Home"
         options={{title: '이벤트유 홈'}}
-        component={HomeScreen}
+        component={WebViewScreen}
       />
       <Tab.Screen
         name="Benefit"

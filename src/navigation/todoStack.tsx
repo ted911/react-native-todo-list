@@ -7,7 +7,9 @@ import {RootStackParamList} from 'navigation/_types.ts';
 function TodoStack() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
   return (
-    <Stack.Navigator initialRouteName="TodoList">
+    <Stack.Navigator
+      screenOptions={{headerShown: false}}
+      initialRouteName="TodoList">
       <Stack.Screen name="TodoList" component={TodoListScreen} />
       <Stack.Screen name="TodoListDetail" component={TodoListDetailScreen} />
     </Stack.Navigator>
