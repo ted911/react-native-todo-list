@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "3233289397",
+    "project_id": "react-native-tedd911",
+    "storage_bucket": "react-native-tedd911.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3233289397:android:74cf53f724e13a821b9afc",
+        "android_client_info": {
+          "package_name": "com.todo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7FYy06iXVvrF4r66grVFticHVtmcrMw8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
