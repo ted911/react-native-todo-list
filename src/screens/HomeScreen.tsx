@@ -5,7 +5,7 @@ import {RootStackParamList} from 'navigation/_types.ts';
 
 interface HomeScreenProps
   extends NativeStackScreenProps<RootStackParamList, 'Home'> {}
-function HomeScreen({}: HomeScreenProps): React.JSX.Element {
+function HomeScreen({navigation}: HomeScreenProps): React.JSX.Element {
   return (
     <View
       style={{
